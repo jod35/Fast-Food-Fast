@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/main.css">
+    <title>Orders.html</title>
+</head>
+<body>
+    <div class="sidebar">
+        <a href="">New Orders</a>
+        <a href="">My Orders</a>
+        <a href="">Settings</a>
+        <a href="{{url_for('auth.logout')}}">Logout</a>
+    </div>
+    <main>
+       <div class="table">
+        <div class="table-section">
+            <a href="#" class="mybtn" id="order-btn">&plus; Add An Order</a>
+            <br>
+            <br>
+            <table>
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>order</th>
+                        <th>location</th>
+                        <th>comment</th>
+                        <th>date</th>
+                        <th>price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                   
+       
+                </tbody>
+            </table>
+        </div>
+       </div>
+        <div class="order-modal" id="order-modal">
+            
+
+                <form action="">
+                    <h2>create Your order</h2>
+                    <fieldset>
+                        <label for="">Order</label>
+                        <input type="text" name="order" id="location" class="form-control" required>
+                    </fieldset>
+                    <fieldset>
+                        <label for="">location</label>
+                        <input type="text" name="location" id="location" class="form-control" required>
+                    </fieldset>
+                    <fieldset>
+                        <label for="">price</label>
+                        <input type="number" name="price" id="location" class="form-control" required>
+                    </fieldset>
+                    <fieldset>
+                        <label for="">Comment</label>
+                        <textarea name="comment" id="" cols="30" rows="5" class="form-control"></textarea>
+                    </fieldset>
+                    <fieldset>
+                       <input type="submit" value="Save" class="mybtn"> <button class="mybtn" onclick="closeModal('order-modal')">Cancel</button>
+                    </fieldset>
+                 
+                </form>
+        </div>
+        <div class="noti-modal" id="noti-modal">
+            <div class="notification">
+                <p class="noti-text"></p>
+                <button class="mybtn" onclick="closeModal('noti-modal')">OK</button>
+            </div>
+        </div>
+    </main>
+    <script src="static/js/orders.js"></script>
+</body>
+</html>

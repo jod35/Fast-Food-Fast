@@ -1,0 +1,353 @@
+:root{
+    --primary-color:brown;
+    --white:white;
+    --black1:black;
+    --black2:rgba(0, 0, 0, 0.671);
+}
+html{
+    background-color: rgb(46, 44, 44);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+a{
+    text-decoration: none;
+    outline: none;
+}
+.container{
+    padding: 2%;
+}
+header{
+    padding: 20px;
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--primary-color);
+}
+.nav-tems{
+    margin-top: 5px;
+    color: var(--white);
+    display: flex;
+}
+.nav-tems a {
+    color: var(--white);
+    background-color: white;
+    font-weight: bold;
+    padding: 10px;
+    text-transform: uppercase;
+    color: var(--primary-color);
+}
+
+.nav-tems > a +a{
+    margin-left: 30px;
+}
+.main{
+    margin-top:20px;
+    display:flex;
+    width: 100%;
+    min-height: 80vh;
+}
+.left{
+    flex: 70%;
+    padding: 2%;
+    background:url('../img/pizza.jpg') no-repeat center center/cover;
+}
+.left p{
+    font-size: 2rem;
+}
+.intro{
+    font-size: 5rem;
+}
+.content{
+    position: absolute;
+}
+.right{
+    flex: 30%;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.foods{
+    background-color: var(--primary-color);
+    flex: 50%;
+    text-align: center;
+}
+.foods a{
+    width: 100%;
+    display: block;
+    padding: 30px;
+    color: var(--white);
+    font-weight: bold;
+}
+.pricing{
+    flex: 50%;
+    text-align: center;
+    background-color: var(--white);
+    margin-top: 20px;
+}
+.price{
+    font-size: 3rem;
+}
+
+fieldset{
+    border: none;
+    padding: 20px;
+}
+.signup-modal{
+    position: fixed;
+    border-radius: 5px;
+    overflow: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    background-color:var(--black2);
+    color: var(--white);
+    padding: 5%;
+}
+.signup-modal a{
+    color: var(--white);
+}
+.signup-modal form{
+    margin-top: 100px;
+    width: 40%;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    background-color:var(--white);
+    color:var(--primary-color);
+    border: 4px solidvar(--primary-color);
+    font-size: 1.2rem;
+}
+.loading{
+    text-align: center;
+    padding: 10%;
+    display: none;
+}
+.loading img{
+    width: 300px;
+}
+.form-control{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid black;
+}
+#close-btn{
+    padding: 20px;
+    background-color:var(--primary-color);
+    font-weight: bold;
+}
+.mybtn{
+    color: var(--white);
+    border: none;
+    background-color:var(--primary-color) ;
+    padding: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 1.2s;
+}
+.mybtn:hover{
+    background-color: var(--white);
+    color:var(--primary-color);
+    border: 3px solid var(--primary-color);
+
+}
+
+#login-btn{
+    color:var(--primary-color);
+    text-decoration: underline;
+}
+#signup-tbtn{
+    color:var(--primary-color);
+    text-decoration: underline;
+}
+.login-modal{
+    position: fixed;
+    border-radius: 5px;
+    overflow: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    background-color:var(--black2);
+    color: var(--white);
+    overflow: auto;
+    padding: 5%;
+}
+.login-modal a{
+    color: var(--white);
+}
+.login-modal form{
+    margin-top: 100px;
+    width: 40%;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    background-color:var(--white);
+    color:var(--primary-color);
+    border: 4px solidvar(--primary-color);
+    font-size: 1.2rem;
+}
+.messages-error{
+    padding: 20px;
+    text-align: center;
+    color: var(--white);
+    background-color: red;
+    font-weight: bold;
+    color: white;
+    display: none;
+}
+.messages-success{
+    padding: 20px;
+    text-align: center;
+    color: var(--white);
+    background-color: green;
+    font-weight: bold;
+    color: white;
+    display: none; 
+    margin-bottom: 20px;
+}
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10%;
+}
+.form form{
+    background-color: var(--white);
+    width: 50%;
+    padding: 20px;
+}
+.error{
+    padding: 20px;
+    text-align: center;
+    color: var(--white);
+    background-color: red;
+    font-weight: bold;
+    color: white;
+}
+
+
+a{
+    text-decoration: none;
+}
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20%;
+    padding: 20px;
+    background-color: brown;
+    height: 100vh;
+    overflow: auto;
+}
+.sidebar a{
+    display: block;
+    padding: 20px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.table-section{
+    position: relative;
+    left: 250px;
+    padding: 2%;
+    overflow-y:auto;
+    background-color: white;
+    height: 100vh;
+    width: 80%;
+    border-radius: 7px;
+}
+.mybtn{
+    background-color: brown;
+    padding: 15px;
+    color: white;
+    border:none;
+    cursor: pointer;form
+}
+td{
+    border: 0.1px solid brown;
+}
+
+thead, th{
+    background-color: brown;
+    color: white;
+    padding: 10px;
+    width: 100px;
+}
+
+tbody{
+    overflow:auto;
+}
+tbody > tr >td{
+    padding: 20px;
+}
+.order-modal{
+    position: fixed;
+    border-radius: 5px;
+    overflow: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    background-color:var(--black2);
+    color: var(--);
+    overflow: auto;
+    padding: 5%;
+}
+.order-modal form{
+    margin-top: 100px;
+    width: 40%;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    background-color:var(--white);
+    color:var(--primary-color);
+    border: 4px solidvar(--primary-color);
+    font-size: 1.2rem;
+    text-transform: capitalize;
+}
+
+.noti-modal{
+    position: fixed;
+    border-radius: 5px;
+    overflow: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color:var(--black2);
+    color: var(--);
+    overflow: auto;
+    padding: 5%;
+    display: none;
+}
+ .notification{
+     width: 45%;
+     background-color: white;
+     margin: auto;
+     height: 200px;
+     padding: 20px;
+     font-size: 1.5rem;
+     padding: 5%;
+ }
+@media(max-width:650px){
+    header{
+        display: flex;
+        flex-direction: column;
+    }
+    .login-modal,.signup-modal{
+        padding: 10px;
+    }
+    .login-modal form,.signup-modal form{
+        width: 90%;
+        margin-top: 100px;
+    }
+}   

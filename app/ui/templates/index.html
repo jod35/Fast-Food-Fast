@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/main.css">
+    <title>Modal form</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Fast Food Fast</h1>
+            <div class="nav-tems">
+                <a href="#" id="signup-btn">Signup</a>
+                <a href="#" id="loginform-btn">Login</a>
+            </div>
+        </header>
+        <main>
+            <div class="main">
+               <div class="left">
+                   
+               </div>
+               <div class="right">
+                   <div class="foods">
+                        <a href="">Fast Foods</a>
+                        <a href="">About Us</a>
+                        <a href="">Contacts</a>
+                   </div>
+                   <div class="pricing">
+                        <!-- <h2>Starting</h2><br>
+                        <p class="price">UGX 3500</p>
+                        <br>
+                        <a href="#" class="mybtn" id="signup-btn">Get Eating</a> -->
+                   </div>
+               </div>
+            </div>
+        </main>
+    </div>
+    
+    <div class="signup-modal" id="signup-modal">
+        <div class="modal-body">
+            <a href="#" id="close-btn" onclick="closeModal('signup-modal')">&times;</a>
+            <form id="signupform">
+                <div class="messages-error">
+                    <p class="message"></p>
+                </div>
+                <h2>Create Your Account</h2>
+                <fieldset>
+                    <label for="username">Username</label>
+                    <br>
+                    <input type="text" name="username" id="username" class="form-control">
+                </fieldset>
+                
+                <fieldset>
+                    <label for="email">email</label>
+                    <br>
+                    <input type="email" name="email" id="email" class="form-control">
+                </fieldset>
+                <fieldset>
+                    <label for="password">password</label>
+                    <br>
+                    <input type="password" name="password" id="password" class="form-control">
+                </fieldset>
+                <fieldset>
+                    <label for="confirm">Confirm</label>
+                    <br>
+                    <input type="password" name="confirm" id="confirm" class="form-control">
+                </fieldset>
+             
+                <fieldset>
+                    <input type="submit" value="Create Your Account" class="mybtn form-control">
+                </fieldset>
+
+                <fieldset>
+                    Already have an account, <a href="#" id="login-btn">Login</a>
+                </fieldset>
+
+            </form>
+
+            <div class="loading">
+                <p>Creating Account..</p>
+                <img src="/static/img/loader.gif" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="login-modal" id="login">
+        <div class="modal-body">
+            <a href="#" id="close-btn" onclick="closeModal('login')">&times;</a>
+            <form action="/auth/login" id="login-form" method="POST">
+                <div class="messages-success">
+                    <p class="message"></p>
+                </div>
+                <h2>Login</h2>
+                <fieldset>
+                    <label for="username">Username</label>
+                    <br>
+                    <input type="text" name="username" id="username" class="form-control">
+                </fieldset>
+                
+               
+                <fieldset>
+                    <label for="password">password</label>
+                    <br>
+                    <input type="password" name="password" id="password" class="form-control">
+                </fieldset>
+        
+        
+                <fieldset>
+                    <input type="submit" value="Sign In" class="mybtn form-control">
+                </fieldset>
+
+                <fieldset>
+                    Do not have an account, <a href="#" id="signup-tbtn">Create one</a>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <script src="static/js/index.js"></script>
+</body>
+</html>
