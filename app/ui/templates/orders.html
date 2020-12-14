@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/css/main.css">
     <title>Orders.html</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> 
 </head>
 <body>
     <div class="sidebar">
@@ -25,14 +27,27 @@
                         <th>id</th>
                         <th>order</th>
                         <th>location</th>
-                        <th>comment</th>
                         <th>date</th>
                         <th>price</th>
                     </tr>
                 </thead>
                 <tbody>
                    
-       
+                    
+                    {% for order in orders %}
+                    <tr class="order-record">
+                        <td class="order-id">{{order.id}}</td>
+                        <td>{{order.order}}</td>
+                        <td>{{order.location}}</td>
+                        <td>{{order.date}}</td>
+                        <td>{{order.price}}</td>
+                        <td><a href="#" class="btn-1">Delete</a></td>
+                        <td><a href="#" class="btn-2">Edit</a></td>
+                    </tr>
+                    
+                        
+                    {% endfor %}
+                        
                 </tbody>
             </table>
         </div>

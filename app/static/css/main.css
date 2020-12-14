@@ -12,7 +12,7 @@ html{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    font-family: 'Montserrat', sans-serif;
 }
 a{
     text-decoration: none;
@@ -136,7 +136,9 @@ fieldset{
     width: 100%;
     padding: 10px;
     border: 1px solid black;
+    text-align: center;
 }
+
 #close-btn{
     padding: 20px;
     background-color:var(--primary-color);
@@ -264,6 +266,9 @@ a{
     width: 80%;
     border-radius: 7px;
 }
+table{
+    width: 100%;
+}
 .mybtn{
     background-color: brown;
     padding: 15px;
@@ -271,10 +276,19 @@ a{
     border:none;
     cursor: pointer;form
 }
-td{
-    border: 0.1px solid brown;
-}
 
+.btn-1{
+    color: white;
+    background-color:red;
+    padding:20px;
+    cursor: pointer;
+}
+.btn-2{
+    color: white;
+    background-color:green;
+    padding:20px;
+    cursor: pointer;
+}
 thead, th{
     background-color: brown;
     color: white;
@@ -286,7 +300,11 @@ tbody{
     overflow:auto;
 }
 tbody > tr >td{
-    padding: 20px;
+    padding: 10px;
+    width: 100px;
+  
+    color: var(--primary-color);
+    font-weight: bold;
 }
 .order-modal{
     position: fixed;

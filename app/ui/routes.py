@@ -1,5 +1,6 @@
 from flask import Blueprint,render_template,url_for
 from flask_login import login_required
+from ..models.users import Order
 
 
 ui_bp=Blueprint('ui',__name__,template_folder='templates')
@@ -15,4 +16,7 @@ def login_failed():
 
 @ui_bp.route('/orders')
 def users_orders():
-    return render_template('orders.html')
+    orders=Order.query.order_by(Order.id.desc()).all()
+
+
+    return render_template('orders.html' ,orders=orders)
