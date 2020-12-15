@@ -10,6 +10,7 @@ const OrderDeleteButtons=document.querySelectorAll('.btn-1');
 const orderRecordIDs=document.querySelectorAll('.order-id');
 
 
+
 orderButton.addEventListener('click',function(){
     orderModal.style.display="block";
 })
@@ -57,21 +58,21 @@ form.addEventListener('submit',(e)=>{
             
 
             let html=`
-                <td class="order-id">${data.order.id}</td>
-                <td>${data.order.order}</td>
-                <td>${data.order.location}</td>
-                <td>${data.order.date}</td>
-                <td>${data.order.price}</td>
-                <td><a href="#" class="btn-1">Delete</a></td>
-                <td><a href="#" class="btn-2">Edit</a></td>
+            <td class="order-id">${data.order.id}</td>
+            <td>${data.order.order}</td>
+            <td>${data.order.location}</td>
+            <td>${data.order.date}</td>
+            <td>${data.order.price}</td>
+            <td><a href="#" class="btn-1">Delete</a></td>
+            <td><a href="#" class="btn-2">Edit</a></td>
             `
 
             row.innerHTML=html;
             table.insertBefore(row,table.childNodes[0]);
 
-            setTimeout(() => {
-                location.reload;
-            }, 2000);
+            location.reload();
+
+            
         })
 
     console.log(newOrderObj);
@@ -79,6 +80,8 @@ form.addEventListener('submit',(e)=>{
     form.reset();
 
     e.preventDefault();
+
+    
 })
 
 for(let i =0; i <orderRecords.length; i++){
