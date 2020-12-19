@@ -6,10 +6,8 @@
     <link rel="stylesheet" href="static/css/main.css" />
     <title>Fast Food Fast |Orders</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet"> 
   </head>
   <body>
     <div class="sidebar">
@@ -37,9 +35,9 @@
               {% for order in orders %}
               <tr class="order-record">
                 <td class="order-id">{{order.id}}</td>
-                <td>{{order.order}}</td>
-                <td>{{order.location}}</td>
-                <td>{{order.price}}</td>
+                <td class="order-order">{{order.order}}</td>
+                <td class="order-location">{{order.location}}</td>
+                <td class="order-price">{{order.price}}</td>
                 <td><a href="#" class="btn-1">Delete</a></td>
                 <td><a href="#" class="btn-2">Edit</a></td>
               </tr>
@@ -154,9 +152,9 @@
           </fieldset>
           <fieldset>
             <input type="submit" value="Save" class="mybtn" />
-            <button class="mybtn" onclick="closeModal('order-update-modal')">
+            <button type="button" class="mybtn" onclick="closeModal('order-update-modal')">
               Cancel
-            </button>
+            </button >
           </fieldset>
         </form>
       </div>
