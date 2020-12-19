@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hmlt</title>
+</head>
+<body>
+<input type="text" name="name" id="mybtn">
+
+<br>
+<br>
+
+<input type="submit" value="Change" onclick="changeTextValue()">
+
+<script>
+    function changeTextValue(){
+        fetch(
+            '/api/order/1',
+            {
+               method:"GET",
+               headers:{
+                "Access-Control-Allow-Origin": "*"
+               }
+            }
+        ).then(res=>res.json()).then(data=>
+        
+            document.getElementById('mybtn').value=data.order.comment
+        )
+    }
+</script>
+</body>
+</html>

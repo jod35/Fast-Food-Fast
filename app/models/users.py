@@ -22,7 +22,11 @@ class User(db.Model,UserMixin):
     def delete(self):
         db.session.delete(self)
         db.session.commit()
+    
 
+    def __repr__(self):
+        return f"User {self.username}"
+        
     def create_password_hash(self,password):
         self.password=generate_password_hash(password)
 
