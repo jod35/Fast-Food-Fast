@@ -14,13 +14,14 @@ def create_account():
     data=request.get_json()
     username=data.get('username')
     email=data.get('email')
+    tel_phone=data.get('tel_phone')
     password=data.get('password')
     confirm=data.get('password')
 
   
     if not check_email_exists(email) and not check_username_exists(password):
 
-        new_user=User(username=username,email=email)
+        new_user=User(username=username,email=email,tel_phone=tel_phone)
 
         new_user.create_password_hash(password)
 

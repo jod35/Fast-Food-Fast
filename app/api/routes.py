@@ -26,7 +26,7 @@ def get_orders():
 @api_bp.route('/orders',methods=['POST'])
 def create_order():
     data=request.get_json()
-
+    
     new_order=Order(
         order=data.get('order'),
         location=data.get('location'),

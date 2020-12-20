@@ -60,7 +60,8 @@ signUpForm.addEventListener('submit',(e)=>{
         username:form_data.get('username'),
         email:form_data.get('email'),
         password:form_data.get('password'),
-        confirm:form_data.get('confirm')
+        confirm:form_data.get('confirm'),
+        tel_phone:form_data.get('tel_phone'),
 
     }
     console.log(newUserObj);

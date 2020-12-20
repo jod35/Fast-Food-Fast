@@ -1,5 +1,5 @@
 from flask import Flask
-from .config import DevConfig,Config
+from .config import DevConfig,Config,TestConfig
 from .ui.routes import ui_bp
 from .utils.database import db
 from .models.users import User,Order

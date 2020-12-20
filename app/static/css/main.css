@@ -200,6 +200,34 @@ fieldset{
     border: 4px solidvar(--primary-color);
     font-size: 1.2rem;
 }
+.settings-modal{
+    position: fixed;
+    border-radius: 5px;
+    overflow: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    background-color:var(--black2);
+    color: var(--white);
+    overflow: auto;
+    padding: 5%;
+}
+.settings-modal a{
+    color: var(--white);
+}
+.settings-modal form{
+    margin-top: 100px;
+    width: 40%;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    background-color:var(--white);
+    color:var(--primary-color);
+    border: 4px solidvar(--primary-color);
+    font-size: 1.2rem;
+}
 .messages-error{
     padding: 20px;
     text-align: center;

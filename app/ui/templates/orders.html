@@ -13,7 +13,7 @@
     <div class="sidebar">
       <a href="">New Orders ></a>
       <a href="">My Orders > </a>
-      <a href="">Settings ></a>
+      <a href="#" id="settings">Settings ></a>
       <a href="{{url_for('auth.logout')}}">Logout ></a>
     </div>
     <main>
@@ -158,9 +158,49 @@
           </fieldset>
         </form>
       </div>
+      <div class="settings-modal" id="settings-modal">
+        <div class="modal-body">
+            <a href="#" id="close-btn" onclick="closeModal('settings-modal')">&times;</a>
+            <form id="settings-form">
+                <div class="messages-error">
+                    <p class="message"></p>
+                </div>
+                <h2>Your Account Settings</h2>
+                <fieldset>
+                    <label for="username">Username</label>
+                    <br>
+                    <input type="text" name="username" id="username" class="form-control">
+                </fieldset>
+                
+                <fieldset>
+                    <label for="email">email</label>
+                    <br>
+                    <input type="email" name="email" id="email" class="form-control">
+                </fieldset>
+                <fieldset>
+                    <label for="password">password</label>
+                    <br>
+                    <input type="password" name="password" id="password" class="form-control">
+                </fieldset>
+                <fieldset>
+                    <label for="confirm">Confirm</label>
+                    <br>
+                    <input type="password" name="confirm" id="confirm" class="form-control">
+                </fieldset>
+             
+                <fieldset>
+                    <input type="submit" value="Create Your Account" class="mybtn form-control">
+                </fieldset>
+
+              
+
+            </form>
+        </div>
+    </div>
     </main>
 
     <script src="static/js/orders.js"></script>
+    <script src="static/js/settings.js"></script>
   </body>
 </html>
 
