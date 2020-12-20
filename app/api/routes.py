@@ -32,7 +32,7 @@ def create_order():
         location=data.get('location'),
         comment=data.get('comment'),
         price=data.get('price'),
-        # sender=current_user,
+        sender=current_user,
          )
 
     new_order.save()

@@ -6,6 +6,7 @@ from .models.users import User,Order
 from .utils.logins import login_manager
 from .auth.routes import auth_bp
 from .api.routes import api_bp
+from flask_migrate import Migrate
 
 
 def create_app():
@@ -20,6 +21,8 @@ def create_app():
     app.register_blueprint(api_bp,url_prefix='/api')
 
     db.init_app(app)
+
+    migrate=Migrate(app,db)
     
 
     login_manager.init_app(app)

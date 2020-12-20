@@ -165,7 +165,7 @@ for (let i = 0; i < orderRecords.length; i++) {
                     fetch(
                         RESOURCE_URL,
                         {
-                            method: "PUT",
+                            method: "PATCH",
                             body: JSON.stringify(updatedOrder),
                             headers: {
                                 'content-type': 'application/json'

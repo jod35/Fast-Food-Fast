@@ -252,6 +252,7 @@ a{
     background-color: var(--primary-color);
     height: 100vh;
     overflow: auto;
+    font-weight: bold;
 }
 .sidebar a{
     display: block;
@@ -259,6 +260,11 @@ a{
     color: var(--white);
     text-transform: uppercase;
     font-weight: bold;
+    transition: 1.8s all;
+}
+.sidebar a:hover{
+    margin-left: 12px;
+    background-color: var(--red);
 }
 .table-section{
     position: relative;

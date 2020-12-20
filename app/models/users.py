@@ -14,6 +14,7 @@ class User(db.Model,UserMixin):
     isAdmin=db.Column(db.Boolean(),default=False)
     joined=db.Column(db.DateTime(),default=datetime.utcnow)
     orders=db.relationship('Order',backref='sender',lazy=True)
+    tel_phone=db.Column(db.Text(),nullable=False)
 
     def save(self):
         db.session.add(self)
