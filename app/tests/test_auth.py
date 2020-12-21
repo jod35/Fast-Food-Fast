@@ -24,6 +24,10 @@ def test_create_account():
     assert new_user.email=='testuser@test.com'
     assert new_user.tel_phone=='0708800963'
 
+
+
+
+
 def test_order_model():
 
     """
@@ -42,3 +46,6 @@ def test_order_model():
     assert new_order.price ==1230000
     assert new_order.comment == 'My Money'
     assert new_order.order == 'Fries'
+
+
+

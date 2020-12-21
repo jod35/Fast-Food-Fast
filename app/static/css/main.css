@@ -271,6 +271,9 @@ fieldset{
 a{
     text-decoration: none;
 }
+.current_user{
+    color: white; font-weight: bold; margin: 20px; font-size: 1.2rem;
+}
 .sidebar{
     position: fixed;
     top: 0;

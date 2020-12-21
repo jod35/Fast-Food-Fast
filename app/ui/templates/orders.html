@@ -11,6 +11,7 @@
   </head>
   <body>
     <div class="sidebar">
+      <p class="current_user" >{{current_user.username}}</p>
       <a href="">New Orders ></a>
       <a href="">My Orders > </a>
       <a href="#" id="settings">Settings ></a>
@@ -169,27 +170,23 @@
                 <fieldset>
                     <label for="username">Username</label>
                     <br>
-                    <input type="text" name="username" id="username" class="form-control">
+                    <input type="text" name="username" id="settings-username" class="form-control">
                 </fieldset>
                 
                 <fieldset>
                     <label for="email">email</label>
                     <br>
-                    <input type="email" name="email" id="email" class="form-control">
+                    <input type="email" name="email" id="settings-email" class="form-control">
                 </fieldset>
                 <fieldset>
-                    <label for="password">password</label>
+                    <label for="password">Contacts</label>
                     <br>
-                    <input type="password" name="password" id="password" class="form-control">
-                </fieldset>
-                <fieldset>
-                    <label for="confirm">Confirm</label>
-                    <br>
-                    <input type="password" name="confirm" id="confirm" class="form-control">
+                    <input type="tel" name="tel_phone" id="settings-tel_phone" class="form-control">
                 </fieldset>
              
+             
                 <fieldset>
-                    <input type="submit" value="Create Your Account" class="mybtn form-control">
+                    <input type="submit" value="Save" class="mybtn form-control">
                 </fieldset>
 
               

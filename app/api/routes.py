@@ -1,7 +1,7 @@
 from flask import Blueprint,jsonify,url_for,make_response,request
 from flask_login import current_user
 from ..models.users import User,Order
-from ..models.schemas import OrderSchema
+from ..models.schemas import OrderSchema,UserSchema
 from ..utils.database import db
 from datetime import datetime
 
@@ -140,3 +140,92 @@ def complete_order(id):
                     }))
 
 
+@api_bp.route('/users',methods=['GET'])
+def get_all_users():
+    users=User.query.all()
+
+    users_=UserSchema(many=True).dump(users)
+
+    
+
+    return make_response(jsonify(
+        {
+            "success":True,
+            "users":users_
+        }
+    ),200)
+
+
+
+
+@api_bp.route('/user/<int:id>',methods=['GET'])
+def get_a_user(id):
+    user=User.query.get_or_404(id)
+
+    user_=UserSchema().dump(user)
+
+    return make_response(jsonify({
+        "success":True,
+        "user":user_
+    }))
+
+@api_bp.route('/user/<int:id>',methods=['PATCH'])
+def update_user_info(id):
+    user=User.query.get_or_404(id)
+
+    data=request.get_json()
+
+    user.username=data.get('username')
+    user.email=data.get('email')
+    user.tel_phone=data.get('tel_phone')
+
+    db.session.commit()
+
+    user_=UserSchema().dump(user)
+
+    return make_response(jsonify({
+        "success":True,
+        "message":"Info Updated",
+        "user":user_
+    }))
+
+
+@api_bp.route('user/<username>',methods=['GET'])
+def get_user_byusername(username):
+    user=User.query.filter_by(username=username).first()
+
+    user_=UserSchema().dump(user)
+
+    return make_response(
+        jsonify({"success":True,
+                 "user":user_
+
+        })
+    )
+
+
+@api_bp.route('user/<username>',methods=['PATCH'])
+def save_settings(username):
+    user=User.query.filter_by(username=username).first()
+
+
+    data=request.get_json()
+
+    user.username=data.get('username')
+
+    user.email=data.get('email')
+
+    user.tel_phone=data.get('tel_phone')
+
+
+    db.session.commit()
+
+    user_=UserSchema().dump(user)
+
+    return make_response(
+        jsonify({"success":True,
+                 "user":user_,
+                 "message":"Info Updated"
+
+        })
+    )
