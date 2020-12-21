@@ -52,3 +52,13 @@ Download and install PostgreSQL
  /api/users/| GET | get all user accounts
  /api/user/username | GET | get a user with a username
  /api/user/username | PATCH | update user credentials except for the password
+
+
+
+
+## Live Project
+[Project is live right here](https://fast-food-fastlive.herokuapp.com)
+
+
+## Author
+[Ssali Jonathan](https://github.com/jod35)
