@@ -16,8 +16,9 @@ class DevConfig(Config):
 
 class ProdConfig(Config):
     DEBUG=False
+    SQLALCHEMY_ECHO=True
     SQLALCHEMY_DATABASE_URI=config('DATABASE_URI')
 
 class TestConfig(Config):
     DEBUG=True
-    SQLALCHEMY_DATABSE_URI='sqlite:///'+os.path.join(BASEDIR,'test.sqlite3')
+    SQLALCHEMY_DATABASE_URI='sqlite:///'+os.path.join(BASEDIR,'test.sqlite3')

@@ -1,5 +1,5 @@
 from flask import Flask
-from .config import DevConfig,Config,TestConfig
+from .config import DevConfig,Config,TestConfig,ProdConfig
 from .ui.routes import ui_bp
 from .utils.database import db
 from .models.users import User,Order
@@ -12,7 +12,7 @@ from flask_migrate import Migrate
 def create_app():
     app=Flask(__name__,static_folder='static')
 
-    app.config.from_object(DevConfig)
+    app.config.from_object(ProdConfig)
 
     app.register_blueprint(ui_bp,url_prefix='/')
 
