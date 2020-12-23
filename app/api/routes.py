@@ -116,19 +116,28 @@ def get_completed_orders():
 @api_bp.route("/order/complete/<int:id>", methods=["PATCH"])
 def complete_order(id):
     order = Order.query.get_or_404(id)
+    if not order.delivery_complete:
+        order.delivery_complete = True
+        order.delivery_time = datetime.utcnow()
+    
 
-    order.delivery_complete = True
-    order.delivery_time = datetime.utcnow()
+        db.session.commit()
 
-    db.session.commit()
+        result = OrderSchema().dump(order)
 
-    result = OrderSchema().dump(order)
-
-    return make_response(
-        jsonify(
-            {"success": True, "message": "Order has been Completed", "order": result}
+        return make_response(
+            jsonify(
+                {"success": True, "message": "Order has been Completed", "order": result}
+            )
         )
-    )
+    
+    else:
+        return make_response(
+            jsonify(
+                {"success": False, "message": "Order is already Completed"}
+            )
+        )
+
 
 
 @api_bp.route("/users", methods=["GET"])

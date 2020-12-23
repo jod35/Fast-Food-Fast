@@ -1,5 +1,5 @@
 :root{
-    --primary-color:brown;
+    --primary-color:rgb(172, 48, 3);
     --white:white;
     --black1:black;
     --black2:rgba(0, 0, 0, 0.671);
@@ -123,9 +123,10 @@ fieldset{
     margin: auto;
     padding: 20px;
     text-align: center;
-    background-color:var(--white);
-    color:var(--primary-color);
+    color:var(--white);
+    border-radius: 7px;
     border: 4px solidvar(--primary-color);
+    background: linear-gradient(24deg, var(--primary-color) ,red); 
     font-size: 1.2rem;
 }
 .loading{
@@ -140,6 +141,8 @@ fieldset{
     width: 100%;
     padding: 10px;
     border: 1px solid black;
+    border-radius: 10px;
+    border: none;
     text-align: center;
 }
 
@@ -150,9 +153,10 @@ fieldset{
 }
 .mybtn{
     color: var(--white);
-    border: none;
+    border: 1px solid var(--white);
     background-color:var(--primary-color) ;
-    padding: 20px;
+    border-radius: 7px;
+    padding: 15px;
     text-transform: uppercase;
     cursor: pointer;
     transition: all 1.2s;
@@ -165,11 +169,11 @@ fieldset{
 }
 
 #login-btn{
-    color:var(--primary-color);
+    color:var(--white);
     text-decoration: underline;
 }
 #signup-tbtn{
-    color:var(--primary-color);
+    color:var(--white);
     text-decoration: underline;
 }
 .login-modal{
@@ -195,9 +199,10 @@ fieldset{
     margin: auto;
     padding: 20px;
     text-align: center;
-    background-color:var(--white);
-    color:var(--primary-color);
+    color:var(--white);
+    border-radius: 7px;
     border: 4px solidvar(--primary-color);
+    background: linear-gradient(24deg, var(--primary-color) ,red); 
     font-size: 1.2rem;
 }
 .settings-modal{
@@ -223,8 +228,8 @@ fieldset{
     margin: auto;
     padding: 20px;
     text-align: center;
-    background-color:var(--white);
-    color:var(--primary-color);
+    background: linear-gradient(24deg, var(--primary-color) ,red); 
+    color:var(--white);
     border: 4px solidvar(--primary-color);
     font-size: 1.2rem;
 }
@@ -297,6 +302,9 @@ a{
     margin-left: 12px;
     background-color: var(--red);
 }
+.active{
+   border: 0.98px solid var(--white);
+}
 .table-section{
     position: relative;
     left: 250px;
@@ -310,13 +318,7 @@ a{
 table{
     width: 100%;
 }
-.mybtn{
-    background-color: var(--primary-color);
-    padding: 15px;
-    color: var(--white);
-    border:none;
-    cursor: pointer;form
-}
+
 
 .btn-1{
     color: var(--white);
@@ -327,6 +329,18 @@ table{
 .btn-2{
     color: var(--white);
     background-color:var(--greeb);
+    padding:10px;
+    cursor: pointer;
+}
+.btn-3{
+    color: var(--white);
+    background-color: dodgerblue;
+    padding:10px;
+    cursor: pointer;
+}
+.btn-4{
+    color: var(--white);
+    background-color: darkgoldenrod;
     padding:10px;
     cursor: pointer;
 }
@@ -381,8 +395,10 @@ tbody > tr >td{
     margin: auto;
     padding: 20px;
     text-align: center;
-    background-color:var(--white);
-    color:var(--primary-color);
+    background: linear-gradient(24deg, var(--primary-color) ,red); 
+
+    color:var(--white);
+    border-radius: 7px;
     border: 4px solidvar(--primary-color);
     font-size: 1.2rem;
     text-transform: capitalize;
@@ -394,8 +410,9 @@ tbody > tr >td{
     margin: auto;
     padding: 20px;
     text-align: center;
-    background-color:var(--white);
-    color:var(--primary-color);
+    background: linear-gradient(24deg, var(--primary-color) ,red); 
+    color:var(--white);
+    border-radius: 7px;
     border: 4px solidvar(--primary-color);
     font-size: 1.2rem;
     text-transform: capitalize;
@@ -433,7 +450,7 @@ tbody > tr >td{
     .login-modal,.signup-modal{
         padding: 10px;
     }
-    .login-modal form,.signup-modal form{
+    .login-modal form,.signup-modal form,.settings-modal form,.noti-modal{
         width: 90%;
         margin-top: 100px;
     }
