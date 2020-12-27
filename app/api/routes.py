@@ -119,7 +119,7 @@ def complete_order(id):
     if not order.delivery_complete:
         order.delivery_complete = True
         order.delivery_time = datetime.utcnow()
-    
+
 
         db.session.commit()
 
@@ -130,7 +130,7 @@ def complete_order(id):
                 {"success": True, "message": "Order has been Completed", "order": result}
             )
         )
-    
+
     else:
         return make_response(
             jsonify(

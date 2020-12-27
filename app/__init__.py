@@ -12,7 +12,7 @@ from flask_migrate import Migrate
 def create_app():
     app=Flask(__name__,static_folder='static')
 
-    app.config.from_object(ProdConfig)
+    app.config.from_object(DevConfig) if app.debug else app.config.from_object(ProdConfig)
 
     app.register_blueprint(ui_bp,url_prefix='/')
 

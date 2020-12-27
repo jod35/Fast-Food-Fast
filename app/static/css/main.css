@@ -9,7 +9,7 @@
     --black3:rgb(46,44,44);
 }
 html{
-    background-color: var(--black3);
+    overflow-x: hidden;
 }
 
 *{

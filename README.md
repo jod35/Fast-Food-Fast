@@ -8,6 +8,8 @@ This is a food delivery app for a restaurant
 - Users can update or delete their orders if they are not yet worked on
 - Restaurants view orders and confirm delivery
 - Users can change their credentials if needed
+- Restaurant can mark orders as complete
+- Restaurant can keep track of complete orders
 
 
 ## Built With 

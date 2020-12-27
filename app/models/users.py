@@ -51,7 +51,8 @@ class Order(db.Model):
     delivery_complete=db.Column(db.Boolean,default=False)
     user_id=db.Column(db.Integer(),db.ForeignKey('user.id'))
 
-
+    def __repr__(self):
+        return f"Order => {self.order}"
     def save(self):
         db.session.add(self)
         db.session.commit()
