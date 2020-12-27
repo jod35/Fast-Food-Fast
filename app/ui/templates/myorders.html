@@ -14,16 +14,16 @@
   </head>
   <body>
     <div class="sidebar">
-      <p class="current_user">{{current_user.username}}</p>
-      <a href="{{url_for('ui.new_orders')}}" class="active">New Orders ></a>
-      <a href="{{url_for('ui.complete_orders')}}">Complete Orders > </a>
+      <p class="current_user" >{{current_user.username}}</p>
+      <a href="{{url_for('ui.users_orders')}}">New Orders ></a>
+      <a href="{{url_for('ui.user_complete_orders')}}" class="active">My Orders > </a>
       <a href="#" id="settings">Settings ></a>
       <a href="{{url_for('auth.logout')}}">Logout ></a>
     </div>
     <main>
       <div class="table">
         <div class="table-section">
-          <h2>New Orders</h2>
+          <h2>Orders By You</h2>
           <br />
           <br />
 
@@ -45,7 +45,13 @@
               <td class="order-order">{{order.order}}</td>
               <td class="order-location">{{order.location}}</td>
               <td class="order-price">{{order.price}}</td>
-              <td><a href="#" class="btn-3">Complete</a></td>
+              
+              {% if order.delivery_complete %}
+              <td class="success">Delivered</a></td>
+              {% else %}
+              <td class="danger">Pending</td>
+              {% endif %}
+                
               <td><a href="#" class="btn-4">View Details</a></td>
             </tr>
 
@@ -146,157 +152,6 @@
       </div>
     </main>
 
-    <script src="static/js/admin.js"></script>
-  </body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="static/css/main.css" />
-    <title>Fast Food Fast |Admin Section</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div class="sidebar">
-      <p class="current_user">{{current_user.username}}</p>
-      <a href="{{url_for('ui.new_orders')}}" class="active">New Orders ></a>
-      <a href="{{url_for('ui.complete_orders')}}">Complete Orders > </a>
-      <a href="#" id="settings">Settings ></a>
-      <a href="{{url_for('auth.logout')}}">Logout ></a>
-    </div>
-    <main>
-      <div class="table">
-        <div class="table-section">
-          <h2>New Orders</h2>
-          <br />
-          <br />
-
-          <table>
-           
-           {% if orders %}
-           <thead>
-            <tr>
-              <th>id</th>
-              <th>order</th>
-              <th>location</th>
-              <th>price</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for order in orders %}
-            <tr class="order-record">
-              <td class="order-id">{{order.id}}</td>
-              <td class="order-order">{{order.order}}</td>
-              <td class="order-location">{{order.location}}</td>
-              <td class="order-price">{{order.price}}</td>
-              <td><a href="#" class="btn-3">Complete</a></td>
-              <td><a href="#" class="btn-4">View Details</a></td>
-            </tr>
-
-            {% endfor %}
-          </tbody>
-          {% else %}
-          <h3>There are new orders</h3>
-           {% endif %}
-             
-          </table>
-        </div>
-      </div>
-
-      <div class="noti-modal" id="noti-modal">
-        <div class="notification">
-          <p class="noti-text"></p>
-          <button class="mybtn" onclick="closeModal('noti-modal')">OK</button>
-        </div>
-      </div>
-      <div class="order-update-modal" id="order-update-modal">
-        <form action="" id="detail-form">
-          <h2>Order Details</h2>
-          <fieldset>
-            <label for="">Order</label>
-            <div id="update-order" class="form-control"></div>
-          </fieldset>
-          <fieldset>
-            <label for="">location</label>
-            <div id="update-location" class="form-control"></div>
-          </fieldset>
-          <fieldset>
-            <label for="">price</label>
-
-            <div class="form-control" id="update-price"></div>
-          </fieldset>
-          <fieldset>
-            <label for="">Comment</label>
-            <div class="form-control" id="update-comment"></div>
-          </fieldset>
-          <fieldset>
-            <button
-              type="button"
-              class="mybtn"
-              onclick="closeModal('order-update-modal')"
-            >
-              Close
-            </button>
-          </fieldset>
-        </form>
-      </div>
-      <div class="settings-modal" id="settings-modal">
-        <div class="modal-body">
-          <a href="#" id="close-btn" onclick="closeModal('settings-modal')"
-            >&times;</a
-          >
-          <form id="settings-form">
-            <div class="messages-error">
-              <p class="message"></p>
-            </div>
-            <h2>Your Account Settings</h2>
-            <fieldset>
-              <label for="username">Username</label>
-              <br />
-              <input
-                type="text"
-                name="username"
-                id="settings-username"
-                class="form-control"
-              />
-            </fieldset>
-
-            <fieldset>
-              <label for="email">email</label>
-              <br />
-              <input
-                type="email"
-                name="email"
-                id="settings-email"
-                class="form-control"
-              />
-            </fieldset>
-            <fieldset>
-              <label for="password">Contacts</label>
-              <br />
-              <input
-                type="tel"
-                name="tel_phone"
-                id="settings-tel_phone"
-                class="form-control"
-              />
-            </fieldset>
-
-            <fieldset>
-              <input type="submit" value="Save" class="mybtn form-control" />
-            </fieldset>
-          </form>
-        </div>
-      </div>
-    </main>
-
-    <script src="static/js/admin.js"></script>
+    <script src="static/js/user.js"></script>
   </body>
 </html>

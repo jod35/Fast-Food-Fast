@@ -12,14 +12,17 @@
   <body>
     <div class="sidebar">
       <p class="current_user" >{{current_user.username}}</p>
-      <a href="">New Orders ></a>
-      <a href="">My Orders > </a>
+      <a href="{{url_for('ui.users_orders')}}" class="active">New Orders ></a>
+      <a href="{{url_for('ui.user_complete_orders')}}">My Orders > </a>
       <a href="#" id="settings">Settings ></a>
       <a href="{{url_for('auth.logout')}}">Logout ></a>
     </div>
     <main>
       <div class="table">
         <div class="table-section">
+          <h2>New Orders</h2>
+          <br />
+          <br />
           <a href="#" class="mybtn" id="order-btn">&plus; Add An Order</a>
           <br />
           <br />
@@ -34,15 +37,18 @@
             </thead>
             <tbody>
               {% for order in orders %}
-              <tr class="order-record">
-                <td class="order-id">{{order.id}}</td>
-                <td class="order-order">{{order.order}}</td>
-                <td class="order-location">{{order.location}}</td>
-                <td class="order-price">{{order.price}}</td>
-                <td><a href="#" class="btn-1">Delete</a></td>
-                <td><a href="#" class="btn-2">Edit</a></td>
-              </tr>
-              
+                
+                {% if not order.delivery_complete %}
+                   <tr>
+                     <td>{{order.id}}</td>
+                     <td>{{order.order}}</td>
+                     <td>{{order.location}}</td>
+                     <td>{{order.price}}</td>
+                     <td><a href="#" class="btn-1">edit</a></td>
+                     <td><a href="#" class="btn-2">delete</a></td>
+                   </tr>
+                {% endif %}
+                  
               {% endfor %}
             </tbody>
           </table>

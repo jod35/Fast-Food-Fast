@@ -36,7 +36,13 @@ def new_orders():
 
 @login_required
 @ui_bp.route('/complete-orders')
-def complete_orders():
+def admin_complete_orders():
     orders=Order.query.filter_by(delivery_complete=True).all()
     
     return render_template('orderscomplete.html',orders=orders)
+
+@login_required
+@ui_bp.route('/myorders')
+def user_complete_orders():
+    orders=Order.query.filter_by(sender=current_user).all()
+    return render_template('myorders.html',orders=orders)
