@@ -16,7 +16,7 @@ html{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Roboto Condensed', Helvetica, Arial,sans-serif;
 }
 a{
     text-decoration: none;
@@ -142,8 +142,6 @@ fieldset{
     padding: 10px;
     border: 1px solid black;
     border-radius: 10px;
-    border: none;
-    text-align: center;
 }
 
 #close-btn{
@@ -390,18 +388,19 @@ tbody > tr >td{
     padding: 5%;
 }
 .order-modal form{
-    margin-top: 100px;
-    width: 40%;
-    margin: auto;
-    padding: 20px;
-    text-align: center;
-    background: linear-gradient(24deg, var(--primary-color) ,red); 
+   
+        margin-top: 100px;
+        width: 40%;
+        margin: auto;
+        padding: 20px;
+        text-align: center;
+        background: white;
+        color: var(--primary-color);
+        border-radius: 7px;
+        border: 4px solidvar(--primary-color);
+        font-size: 1.2rem;
+        text-transform: capitalize;
 
-    color:var(--white);
-    border-radius: 7px;
-    border: 4px solidvar(--primary-color);
-    font-size: 1.2rem;
-    text-transform: capitalize;
 }
 
 .order-update-modal form{
@@ -409,10 +408,8 @@ tbody > tr >td{
     width: 40%;
     margin: auto;
     padding: 20px;
-    text-align: center;
-    background: linear-gradient(24deg, var(--primary-color) ,red); 
-    color:var(--white);
     border-radius: 7px;
+    background-color: white;
     border: 4px solidvar(--primary-color);
     font-size: 1.2rem;
     text-transform: capitalize;

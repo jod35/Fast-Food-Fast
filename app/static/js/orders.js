@@ -93,68 +93,27 @@ for (let i = 0; i < orderRecords.length; i++) {
         orderRecords[i].style.display = "none";
       });
   });
+}
 
-  OrderUpdateButtons[i].addEventListener("click", () => {
+for(let i =0 ; i < OrderDeleteButtons.length; i++){
+  OrderDeleteButtons[i].addEventListener('click',()=>{
     let orderID = orderRecordIDs[i].innerText;
 
-    let RESOURCE_URL = `/api/order/${orderID}`;
+    let DELETE_URL = `/api/order/${orderID}`;
 
-    //fetch the resource using the URL
-
-    fetch(RESOURCE_URL, {
-      method: "GET",
-      headers: {
-        "content-type": "application/json",
-      },
+    fetch(DELETE_URL, {
+      method: "DELETE",
     })
       .then((response) => response.json())
       .then((data) => {
-        let location = document.querySelector("#location");
-
-        orderUpdateModal.style.display = "block";
-
-        //set the fields like this
-        document.querySelector("#update-order").value = data.order.order;
-        document.querySelector("#update-location").value = data.order.location;
-        document.querySelector("#update-price").value = data.order.price;
-        document.querySelector("#update-comment").value = data.order.comment;
-
-        console.log(data);
-
-        //update order logic
-
-        orderUpdateform.addEventListener("submit", (e) => {
-          let form_data = new FormData(orderUpdateform);
-
-          let updatedOrder = {
-            order: form_data.get("order"),
-            price: form_data.get("price"),
-            comment: form_data.get("comment"),
-            location: form_data.get("location"),
-          };
-
-          //send form data
-
-          fetch(RESOURCE_URL, {
-            method: "PATCH",
-            body: JSON.stringify(updatedOrder),
-            headers: {
-              "content-type": "application/json",
-            },
-          })
-            .then((res) => res.json())
-            .then((data) => {
-              orderUpdateModal.style.display = "none";
-              notificationModal.style.display = "block";
-              notificationMessage.innerText = data.message;
-
-              orderRecordOrder[i].innerText = data.order.order;
-              orderRecordLocation[i].innerText = data.order.location;
-              orderRecordPrice[i].innerText = data.order.price;
-            });
-
-          e.preventDefault();
-        });
+        console.log(data.message);
+        notificationModal.style.display = "block";
+        notificationMessage.innerText = data.message;
+        orderRecords[i].style.display = "none";
       });
-  });
+    
+  })
 }
+
+  
+
